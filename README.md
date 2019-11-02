@@ -2,7 +2,7 @@
 
 I have completed the java remote coding exercise within 8hours.
 
-Based on the problem given, I had come out with complete program which cater scenario below:
+Based on the problem given, I had come out with complete program which will cater scenarios below:
 1. Normal equation without brackets
 2. Equation with brackets
 3. Equation with nested brackets.
