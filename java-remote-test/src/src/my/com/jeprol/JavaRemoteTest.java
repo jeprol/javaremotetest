@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
+import java.util.List; 
 import java.util.Map;
 
 public class JavaRemoteTest {
@@ -92,9 +92,9 @@ public class JavaRemoteTest {
 			System.out.println("\n");
 			
 			String string12 = "2 * 4 + 10 / 5";
-			System.out.println("Question => " + string11);
-			System.out.println("Answer :" + Double.valueOf(((10 - 8) + ((2 + 3) * (7 - 5)))));
-			System.out.println("Result :" + calculate(string11));
+			System.out.println("Question => " + string12);
+			System.out.println("Answer :" + Double.valueOf((2 * 4 + 10 / 5)));
+			System.out.println("Result :" + calculate(string12));
 			System.out.println("\n");
 
 		} catch (Exception e) {
