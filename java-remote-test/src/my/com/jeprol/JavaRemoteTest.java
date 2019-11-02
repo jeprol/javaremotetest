@@ -90,6 +90,12 @@ public class JavaRemoteTest {
 			System.out.println("Answer :" + Double.valueOf(((10 - 8) + ((2 + 3) * (7 - 5)))));
 			System.out.println("Result :" + calculate(string11));
 			System.out.println("\n");
+			
+			String string12 = "2 * 4 + 10 / 5";
+			System.out.println("Question => " + string11);
+			System.out.println("Answer :" + Double.valueOf(((10 - 8) + ((2 + 3) * (7 - 5)))));
+			System.out.println("Result :" + calculate(string11));
+			System.out.println("\n");
 
 		} catch (Exception e) {
 			System.err.println(
