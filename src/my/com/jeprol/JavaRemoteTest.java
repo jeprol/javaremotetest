@@ -137,6 +137,7 @@ public class JavaRemoteTest {
 		}
 
 		List<Integer> bracketsList = null;
+		
 		List<Integer> bracketsListKey = new ArrayList<Integer>();
 
 		for (int i = 0; i < listBracketInOrder.size();) {
@@ -153,12 +154,11 @@ public class JavaRemoteTest {
 
 		Collections.sort(bracketsListKey);
 
+		// if the string has brackets, then calculate it recursively
 		for (Integer integer : bracketsListKey) {
-
 			recursiveCalculate(bracketsMap.get(integer).get(0), bracketsMap.get(integer).get(1), sumInArray);
 
 		}
-
 		return recursiveCalculate(0, 0, sumInArray);
 
 	}
