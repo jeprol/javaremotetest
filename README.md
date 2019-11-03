@@ -21,7 +21,7 @@ I also added the error handling exception by throwing the error to the caller.
 
 I have added the comments each of method and certain line of code in order to make it easier to understand. I am also using constant instead of hard coded it.
 
-Added extra scenario - #string11 and #string12;
+Added extra scenario - Question#11 and Question#12;
 
 To understand more on the flow of the calculation, you may uncomment the System.out.println that available in the code.
 

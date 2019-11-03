@@ -32,76 +32,76 @@ public class JavaRemoteTest {
 
 			// Without brackets
 			String string1 = "1 + 1";
-			System.out.println("Question => " + string1);
+			System.out.println("Question#1 => " + string1);
 			System.out.println("Expected Answer :" + Double.valueOf((1 + 1)));
 
 			System.out.println("Result :" + calculate(string1));
 			System.out.println("\n");
 
 			String string2 = "2 * 2";
-			System.out.println("Question => " + string2);
+			System.out.println("Question#2 => " + string2);
 			System.out.println("Expected Answer :" + Double.valueOf((2 * 2)));
 			System.out.println("Result :" + calculate(string2));
 			System.out.println("\n");
 
 			String string3 = "1 + 2 + 3";
-			System.out.println("Question => " + string3);
+			System.out.println("Question#3 => " + string3);
 			System.out.println("Expected Answer :" + Double.valueOf((1 + 2 + 3)));
 			System.out.println("Result :" + calculate(string3));
 			System.out.println("\n");
 
 			String string4 = "6 / 2";
-			System.out.println("Question => " + string4);
+			System.out.println("Question#4 => " + string4);
 			System.out.println("Expected Answer :" + Double.valueOf((6 / 2)));
 			System.out.println("Result :" + calculate(string4));
 			System.out.println("\n");
 
 			String string5 = "11 + 23";
-			System.out.println("Question => " + string5);
+			System.out.println("Question#5 => " + string5);
 			System.out.println("Expected Answer :" + Double.valueOf((11 + 23)));
 			System.out.println("Result :" + calculate(string5));
 			System.out.println("\n");
 
 			String string6 = "11.1 + 23";
-			System.out.println("Question => " + string6);
+			System.out.println("Question#6 => " + string6);
 			System.out.println("Expected Answer :" + Double.valueOf((11.1 + 23)));
 			System.out.println("Result :" + calculate(string6));
 			System.out.println("\n");
 
 			String string7 = "1 + 1 * 3";
-			System.out.println("Question => " + string7);
+			System.out.println("Question#7 => " + string7);
 			System.out.println("Expected Answer :" + Double.valueOf((1 + 1 * 3)));
 			System.out.println("Result :" + calculate(string7));
 			System.out.println("\n");
 
 			// With brackets
 			String string8 = "( 11.5 + 15.4 ) + 10.1";
-			System.out.println("Question => " + string8);
+			System.out.println("Question#8 => " + string8);
 			System.out.println("Expected Answer :" + Double.valueOf(((11.5 + 15.4) + 10.1)));
 			System.out.println("Result :" + calculate(string8));
 			System.out.println("\n");
 
 			String string9 = "23 - ( 29.3 - 12.5 )";
-			System.out.println("Question => " + string9);
+			System.out.println("Question#9 => " + string9);
 			System.out.println("Expected Answer :" + Double.valueOf((23 - (29.3 - 12.5))));
 			System.out.println("Result :" + calculate(string9));
 			System.out.println("\n");
 
 			// With nested brackets
 			String string10 = "10 - ( 2 + 3 * ( 7 - 5 ) )";
-			System.out.println("Question => " + string10);
+			System.out.println("Question#10 => " + string10);
 			System.out.println("Expected Answer :" + Double.valueOf((10 - (2 + 3 * (7 - 5)))));
 			System.out.println("Result :" + calculate(string10));
 			System.out.println("\n");
 
 			String string11 = "( 10 - 8 ) + ( ( 2 + 3 ) * ( 7 - 5 ) )";
-			System.out.println("Question => " + string11);
+			System.out.println("Question#11 => " + string11);
 			System.out.println("Expected Answer :" + Double.valueOf(((10 - 8) + ((2 + 3) * (7 - 5)))));
 			System.out.println("Result :" + calculate(string11));
 			System.out.println("\n");
 
 			String string12 = "( ( 2 + 4 ) * 10 ) / 5";
-			System.out.println("Question => " + string12);
+			System.out.println("Question#12 => " + string12);
 			System.out.println("Expected Answer :" + Double.valueOf((((2 + 4) * 10) / 5)));
 			System.out.println("Result :" + calculate(string12));
 			System.out.println("\n");
@@ -165,9 +165,9 @@ public class JavaRemoteTest {
 
 		// if the string has brackets, then calculate it recursively
 		for (Integer integer : bracketsListKey) {
-			
+
 //			System.out.println("range of brackets to be processed >>" + bracketsMap.get(integer));
-			
+
 			recursiveCalculate(bracketsMap.get(integer).get(0), bracketsMap.get(integer).get(1), sumInArray);
 
 		}
@@ -186,8 +186,8 @@ public class JavaRemoteTest {
 	 * @param count              - position of index of sumInArray that being
 	 *                           processed
 	 */
-	private static void findBracketEnd(String[] sumInArray, List<Integer> listBracketInOrder, int countStart,
-			int count) {
+	private static void findBracketEnd(String[] sumInArray, List<Integer> listBracketInOrder, int countStart, int count)
+			throws Exception {
 
 		// if found the pair, then add to the list
 		if (BRACKET_END.equals(sumInArray[count]) && countStart == 0) {
