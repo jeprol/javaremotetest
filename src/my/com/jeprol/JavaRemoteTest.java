@@ -190,26 +190,26 @@ public class JavaRemoteTest {
 			throws Exception {
 
 		// if found the pair, then add to the list
-		if (BRACKET_END.equals(sumInArray[count]) && countStart == 0) {
+		if (BRACKET_END.equals(sumInArray[count]) && 0 == countStart ) {
 			listBracketInOrder.add(count);
 
 			// if found the bracket end but not its pair, then find recursively for the pair
-		} else if (BRACKET_END.equals(sumInArray[count]) && countStart != 0) {
-			countStart = countStart - 1;
-			count = count + 1;
+		} else if (BRACKET_END.equals(sumInArray[count]) && 0 != countStart) {
+			countStart -= 1;
+			count += 1;
 
 			findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
 
 			// if found the nested brackets, then find recursively for the pair
 		} else if (BRACKET_START.equals(sumInArray[count])) {
-			countStart = countStart + 1;
-			count = count + 1;
+			countStart += 1;
+			count += 1;
 
 			findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
 
 			// keep find recursively for the pair
 		} else {
-			count = count + 1;
+			count += 1;
 
 			findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
 
