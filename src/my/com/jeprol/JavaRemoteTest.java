@@ -10,326 +10,430 @@ import java.util.Map;
 /**
  * Program calculate equation based on input in string which consist of numbers,
  * brackets and operators separated by spaces
- * 
+ *
  * @author jeprol
  *
  */
 public class JavaRemoteTest {
 
-	// list of constant used in this program
-	public static final String OPERATOR_PLUS = "+";
-	public static final String OPERATOR_MULTIPLY = "*";
-	public static final String OPERATOR_DIVIDE = "/";
-	public static final String OPERATOR_MINUS = "-";
-	public static final String BRACKET_START = "(";
-	public static final String BRACKET_END = ")";
-	public static final String EMPTY_STRING = "";
-	public static final String SPACE_STRING = " ";
-
-	public static void main(String[] args) {
-
-		try {
-
-			// Without brackets
-			String string1 = "1 + 1";
-			System.out.println("Question#1 => " + string1);
-			System.out.println("Expected Answer :" + Double.valueOf((1 + 1)));
-
-			System.out.println("Result :" + calculate(string1));
-			System.out.println("\n");
-
-			String string2 = "2 * 2";
-			System.out.println("Question#2 => " + string2);
-			System.out.println("Expected Answer :" + Double.valueOf((2 * 2)));
-			System.out.println("Result :" + calculate(string2));
-			System.out.println("\n");
-
-			String string3 = "1 + 2 + 3";
-			System.out.println("Question#3 => " + string3);
-			System.out.println("Expected Answer :" + Double.valueOf((1 + 2 + 3)));
-			System.out.println("Result :" + calculate(string3));
-			System.out.println("\n");
-
-			String string4 = "6 / 2";
-			System.out.println("Question#4 => " + string4);
-			System.out.println("Expected Answer :" + Double.valueOf((6 / 2)));
-			System.out.println("Result :" + calculate(string4));
-			System.out.println("\n");
-
-			String string5 = "11 + 23";
-			System.out.println("Question#5 => " + string5);
-			System.out.println("Expected Answer :" + Double.valueOf((11 + 23)));
-			System.out.println("Result :" + calculate(string5));
-			System.out.println("\n");
-
-			String string6 = "11.1 + 23";
-			System.out.println("Question#6 => " + string6);
-			System.out.println("Expected Answer :" + Double.valueOf((11.1 + 23)));
-			System.out.println("Result :" + calculate(string6));
-			System.out.println("\n");
-
-			String string7 = "1 + 1 * 3";
-			System.out.println("Question#7 => " + string7);
-			System.out.println("Expected Answer :" + Double.valueOf((1 + 1 * 3)));
-			System.out.println("Result :" + calculate(string7));
-			System.out.println("\n");
-
-			// With brackets
-			String string8 = "( 11.5 + 15.4 ) + 10.1";
-			System.out.println("Question#8 => " + string8);
-			System.out.println("Expected Answer :" + Double.valueOf(((11.5 + 15.4) + 10.1)));
-			System.out.println("Result :" + calculate(string8));
-			System.out.println("\n");
-
-			String string9 = "23 - ( 29.3 - 12.5 )";
-			System.out.println("Question#9 => " + string9);
-			System.out.println("Expected Answer :" + Double.valueOf((23 - (29.3 - 12.5))));
-			System.out.println("Result :" + calculate(string9));
-			System.out.println("\n");
-
-			// With nested brackets
-			String string10 = "10 - ( 2 + 3 * ( 7 - 5 ) )";
-			System.out.println("Question#10 => " + string10);
-			System.out.println("Expected Answer :" + Double.valueOf((10 - (2 + 3 * (7 - 5)))));
-			System.out.println("Result :" + calculate(string10));
-			System.out.println("\n");
-
-			String string11 = "( 10 - 8 ) + ( ( 2 + 3 ) * ( 7 - 5 ) )";
-			System.out.println("Question#11 => " + string11);
-			System.out.println("Expected Answer :" + Double.valueOf(((10 - 8) + ((2 + 3) * (7 - 5)))));
-			System.out.println("Result :" + calculate(string11));
-			System.out.println("\n");
-
-			String string12 = "( ( 2 + 4 ) * 10 ) / 5";
-			System.out.println("Question#12 => " + string12);
-			System.out.println("Expected Answer :" + Double.valueOf((((2 + 4) * 10) / 5)));
-			System.out.println("Result :" + calculate(string12));
-			System.out.println("\n");
-
-		} catch (Exception e) {
-			System.err.println(
-					"Please check the input. Make sure numbers, operations, brackets are separated by spaces.");
-			e.printStackTrace();
-
-		}
-
-	}
-
-	/**
-	 * To calculate the equation in String parameter which consist of numbers,
-	 * brackets and operators separated by spaces
-	 * 
-	 * @param sum
-	 * @return total calculation of the equation.
-	 * @throws Exception
-	 */
-	public static double calculate(String sum) throws Exception {
+    // list of constant used in this program
+    public static final String OPERATOR_PLUS = "+";
+    public static final String OPERATOR_MULTIPLY = "*";
+    public static final String OPERATOR_DIVIDE = "/";
+    public static final String OPERATOR_MINUS = "-";
+    public static final String BRACKET_START = "(";
+    public static final String BRACKET_END = ")";
+    public static final String EMPTY_STRING = "";
+    public static final String SPACE_STRING = " ";
+
+    public static void main(String[] args) {
+
+        try {
+
+            // Without brackets
+            String string1 = "1 + 1 ";
+            System.out.println("Question#1 => " + string1);
+            System.out.println("Expected Answer :" + Double.valueOf(1 + 1));
+
+            System.out.println("Result :" + calculate(string1));
+            System.out.println("\n");
+
+            String string2 = "2 * 2";
+            System.out.println("Question#2 => " + string2);
+            System.out.println("Expected Answer :" + Double.valueOf(2 * 2));
+            System.out.println("Result :" + calculate(string2));
+            System.out.println("\n");
+
+            String string3 = "1 + 2 + 3";
+            System.out.println("Question#3 => " + string3);
+            System.out.println("Expected Answer :" + Double.valueOf(1 + 2 + 3));
+            System.out.println("Result :" + calculate(string3));
+            System.out.println("\n");
+
+            String string4 = "6 / 2";
+            System.out.println("Question#4 => " + string4);
+            System.out.println("Expected Answer :" + Double.valueOf(6 / 2));
+            System.out.println("Result :" + calculate(string4));
+            System.out.println("\n");
+
+            String string5 = "11 + 23";
+            System.out.println("Question#5 => " + string5);
+            System.out.println("Expected Answer :" + Double.valueOf(11 + 23));
+            System.out.println("Result :" + calculate(string5));
+            System.out.println("\n");
+
+            String string6 = "11.1 + 23";
+            System.out.println("Question#6 => " + string6);
+            System.out.println("Expected Answer :" + Double.valueOf(11.1 + 23));
+            System.out.println("Result :" + calculate(string6));
+            System.out.println("\n");
+
+            String string7 = "1 + 1 * 3";
+            System.out.println("Question#7 => " + string7);
+            System.out.println("Expected Answer :" + Double.valueOf(1 + 1 * 3));
+            System.out.println("Result :" + calculate(string7));
+            System.out.println("\n");
+
+            // With brackets
+            String string8 = "( 11.5 + 15.4 ) + 10.1";
+            System.out.println("Question#8 => " + string8);
+            System.out.println("Expected Answer :" + Double.valueOf((11.5 + 15.4) + 10.1));
+            System.out.println("Result :" + calculate(string8));
+            System.out.println("\n");
+
+            String string9 = "23 - ( 29.3 - 12.5 )";
+            System.out.println("Question#9 => " + string9);
+            System.out.println("Expected Answer :" + Double.valueOf(23 - (29.3 - 12.5)));
+            System.out.println("Result :" + calculate(string9));
+            System.out.println("\n");
+
+            // With nested brackets
+            String string10 = "10 - ( 2 + 3 * ( 7 - 5 ) )";
+            System.out.println("Question#10 => " + string10);
+            System.out.println("Expected Answer :" + Double.valueOf(10 - (2 + 3 * (7 - 5))));
+            System.out.println("Result :" + calculate(string10));
+            System.out.println("\n");
+
+            String string11 = "( 10 - 8 ) + ( ( 2 + 3 ) * ( 7 - 5 ) )";
+            System.out.println("Question#11 => " + string11);
+            System.out.println("Expected Answer :"
+                    + Double.valueOf(((10 - 8) + ((2 + 3) * (7 - 5)))));
+            System.out.println("Result :" + calculate(string11));
+            System.out.println("\n");
+
+            String string12 = "( (  2  +  4  )  *  10  )  / 5  ";
+            System.out.println("Question#12 => " + string12);
+            System.out.println("Expected Answer :" + Double.valueOf(((2 + 4) * 10) / 5));
+            System.out.println("Result :" + calculate(string12));
+            System.out.println("\n");
+
+            String string13 = " 4  *  2  * 4 / 2";
+            System.out.println("Question#13 => " + string13);
+            System.out.println("Expected Answer :" + Double.valueOf(4 * 2 * 4 / 2));
+            System.out.println("Result :" + calculate(string13));
+            System.out.println("\n");
+
+        } catch (Exception e) {
+            System.err
+                    .println("Please check the input. Make sure numbers, operations, brackets are separated by spaces.");
+            e.printStackTrace();
 
-		List<Integer> listBracketInOrder = new ArrayList<Integer>(); // to store brackets found in string.
-		Map<Integer, List<Integer>> bracketsMap = new HashMap<Integer, List<Integer>>(); // using map to store index
-		List<Integer> bracketsList = null; // temp list to store the brackets pairs
-		List<Integer> bracketsListKey = new ArrayList<Integer>(); // to store temp brackets keys for sorting. // between
-																	// brackets.
+        }
 
-		// Step 1: Split based on space and store into array.
-		String[] sumInArray = sum.split(SPACE_STRING);
+    }
 
-		// Step 2: Loop the array and find brackets. Using recursive to handle the
-		// nested brackets
-		for (int i = 0; i < sumInArray.length; i++) {
+    /**
+     * To calculate the equation in String parameter which consist of numbers,
+     * brackets and operators separated by spaces
+     *
+     * @param sum
+     * @return total calculation of the equation.
+     * @throws Exception
+     */
+    public static double calculate(String sum) throws Exception {
 
-			if (BRACKET_START.equals(sumInArray[i])) {
+        List<Integer> listBracketInOrder = new ArrayList<Integer>(); // to store brackets found in string.
+        Map<Integer, List<Integer>> bracketsMap = new HashMap<Integer, List<Integer>>(); // using map to store index
+        List<Integer> bracketsList = null; // temp list to store the brackets pairs
+        List<Integer> bracketsListKey = new ArrayList<Integer>(); // to store temp brackets keys for sorting. // between
+                                                                  // brackets.
 
-				listBracketInOrder.add(i); // add to the list if found
+        // Step 1: Split based on space and store into array.
+        String[] sumInArray = sum.split(SPACE_STRING);
 
-				findBracketEnd(sumInArray, listBracketInOrder, 0, i + 1);
+        // Step 2: Loop the array and find brackets. Using recursive to handle the
+        // nested brackets
+        for (int i = 0; i < sumInArray.length; i++) {
 
-			}
-		}
+            if (BRACKET_START.equals(sumInArray[i])) {
 
-		// Step 3. Store brackets pairs in the map for processing
-		for (int i = 0; i < listBracketInOrder.size();) {
-			bracketsList = new ArrayList<Integer>();
-			bracketsList.addAll(listBracketInOrder.subList(i, i + 2));
-			bracketsMap.put(listBracketInOrder.get(i + 1), bracketsList); // get the index of bracket end for sorting
+                listBracketInOrder.add(i); // add to the list if found
 
-			i += 2;
+                findBracketEnd(sumInArray, listBracketInOrder, 0, i + 1);
 
-		}
+            }
+        }
 
-		bracketsListKey.addAll(bracketsMap.keySet());
+        // Step 3. Store brackets pairs in the map for processing
+        for (int i = 0; i < listBracketInOrder.size();) {
+            bracketsList = new ArrayList<Integer>();
+            bracketsList.addAll(listBracketInOrder.subList(i, i + 2));
+            bracketsMap.put(listBracketInOrder.get(i + 1), bracketsList); // get the index of bracket end for sorting
 
-		// Step 4. Sort the brackets key to calculate the most inner nested brackets
-		// first
-		Collections.sort(bracketsListKey);
+            i += 2;
 
-		// if the string has brackets, then calculate it recursively
-		for (Integer integer : bracketsListKey) {
+        }
 
-//			System.out.println("range of brackets to be processed >>" + bracketsMap.get(integer));
+        bracketsListKey.addAll(bracketsMap.keySet());
 
-			recursiveCalculate(bracketsMap.get(integer).get(0), bracketsMap.get(integer).get(1), sumInArray);
+        // Step 4. Sort the brackets key to calculate the most inner nested brackets
+        // first
+        Collections.sort(bracketsListKey);
 
-		}
+        // if the string has brackets, then calculate it recursively
+        for (Integer integer : bracketsListKey) {
 
-		return recursiveCalculate(0, 0, sumInArray);
+            //			System.out.println("range of brackets to be processed >>" + bracketsMap.get(integer));
 
-	}
+            recursiveCalculate(bracketsMap.get(integer).get(0), bracketsMap.get(integer).get(1),
+                    sumInArray);
 
-	/**
-	 * 
-	 * @param sumInArray         - array which contains numbers, brackets,
-	 *                           operations
-	 * @param listBracketInOrder
-	 * @param countStart         - used to count nested brackets
-	 * @param bracket            - value either "(" or ")"
-	 * @param count              - position of index of sumInArray that being
-	 *                           processed
-	 */
-	private static void findBracketEnd(String[] sumInArray, List<Integer> listBracketInOrder, int countStart, int count)
-			throws Exception {
+        }
 
-		// if found the pair, then add to the list
-		if (BRACKET_END.equals(sumInArray[count]) && 0 == countStart ) {
-			listBracketInOrder.add(count);
+        return recursiveCalculate(0, 0, sumInArray);
 
-			// if found the bracket end but not its pair, then find recursively for the pair
-		} else if (BRACKET_END.equals(sumInArray[count]) && 0 != countStart) {
-			countStart -= 1;
-			count += 1;
+    }
 
-			findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
+    /**
+     *
+     * @param sumInArray         - array which contains numbers, brackets,
+     *                           operations
+     * @param listBracketInOrder
+     * @param countStart         - used to count nested brackets
+     * @param bracket            - value either "(" or ")"
+     * @param count              - position of index of sumInArray that being
+     *                           processed
+     */
+    private static void findBracketEnd(String[] sumInArray, List<Integer> listBracketInOrder,
+            int countStart, int count) throws Exception {
+
+        // if found the pair, then add to the list
+        if (BRACKET_END.equals(sumInArray[count]) && 0 == countStart) {
+            listBracketInOrder.add(count);
+
+            // if found the bracket end but not its pair, then find recursively for the pair
+        } else if (BRACKET_END.equals(sumInArray[count]) && 0 != countStart) {
+            countStart -= 1;
+            count += 1;
+
+            findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
+
+            // if found the nested brackets, then find recursively for the pair
+        } else if (BRACKET_START.equals(sumInArray[count])) {
+            countStart += 1;
+            count += 1;
+
+            findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
+
+            // keep find recursively for the pair
+        } else {
+            count += 1;
+
+            findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
+
+        }
+
+    }
+
+    /**
+     * To calculate normal equation and also range of array given of brackets
+     *
+     * @param start      - starting index to be processed
+     * @param end        - ending index to be processed
+     * @param sumInArray - array that consists of numbers, brackets and operators
+     * @return total - calculation of the equation given range of array.
+     * @throws Exception
+     */
+    private static double recursiveCalculate(Integer start, Integer end, String[] sumInArray)
+            throws Exception {
+
+        String[] stringRange;
+        double total = 0d;
+        boolean exitLoop = false;
+        String stringNo1 = null;
+        String stringNo2 = null;
+
+        // check whether its normal equation or with brackets
+        if ((0 == start && 0 == end)) {
+            end = sumInArray.length;
+        }
 
-			// if found the nested brackets, then find recursively for the pair
-		} else if (BRACKET_START.equals(sumInArray[count])) {
-			countStart += 1;
-			count += 1;
+        stringRange = Arrays.copyOfRange(sumInArray, start, end);
 
-			findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
+        // this chuck of logic to handle operation priority which is multiply/divide
+        // operation will be calculated first
+        while ((Arrays.toString(stringRange).contains(OPERATOR_DIVIDE) || Arrays.toString(
+                stringRange).contains(OPERATOR_MULTIPLY))
+                && !exitLoop) {
 
-			// keep find recursively for the pair
-		} else {
-			count += 1;
+            //            System.out.println("List of string calculate of mutliply/divide >>>"
+            //                    + Arrays.toString(stringRange));
 
-			findBracketEnd(sumInArray, listBracketInOrder, countStart, count);
+            for (int j = start; j <= end; j++) {
 
-		}
+                if ((OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[j])) || OPERATOR_DIVIDE
+                        .equals(String.valueOf(sumInArray[j])))
+                        && (String.valueOf(sumInArray[j - 1]).isEmpty() || String.valueOf(
+                                sumInArray[j + 1]).isEmpty())) {
 
-	}
+                    if (String.valueOf(sumInArray[j - 1]).isEmpty()) {
+                        for (int k = j - 1; k >= start; k--) {
+                            if (!String.valueOf(sumInArray[k]).isEmpty()
+                                    && isNumeric(sumInArray[k])) {
+                                stringNo1 = sumInArray[k];
+                                sumInArray[k] = EMPTY_STRING;
+                                break;
+                            }
 
-	/**
-	 * To calculate normal equation and also range of array given of brackets
-	 * 
-	 * @param start      - starting index to be processed
-	 * @param end        - ending index to be processed
-	 * @param sumInArray - array that consists of numbers, brackets and operators
-	 * @return total - calculation of the equation given range of array.
-	 * @throws Exception
-	 */
-	private static double recursiveCalculate(Integer start, Integer end, String[] sumInArray) throws Exception {
+                        }
 
-		String[] stringRange;
-		double total = 0d;
-		boolean exitLoop = false;
+                    } else {
+                        stringNo1 = sumInArray[j - 1];
+                        sumInArray[j - 1] = EMPTY_STRING;
+                    }
 
-		// check whether its normal equation or with brackets
-		if ((0 == start && 0 == end)) {
-			end = sumInArray.length;
-		}
+                    stringNo2 = getStringNo2(end, sumInArray, j);
+                    //                    if (String.valueOf(sumInArray[j + 1]).isEmpty()) {
+                    //                        for (int k = j + 1; k <= end; k++) {
+                    //                            if (!String.valueOf(sumInArray[k]).isEmpty()
+                    //                                    && isNumeric(sumInArray[k])) {
+                    //                                stringNo2 = sumInArray[k];
+                    //                                sumInArray[k] = EMPTY_STRING;
+                    //                                break;
+                    //
+                    //                            }
+                    //
+                    //                        }
+                    //
+                    //                    } else {
+                    //                        stringNo2 = sumInArray[j + 1];
+                    //                        sumInArray[j + 1] = EMPTY_STRING;
+                    //                    }
 
-		stringRange = Arrays.copyOfRange(sumInArray, start, end);
+                    if (null != stringNo1 && null != stringNo2) {
 
-		// this chuck of logic to handle operation priority which is multiply/divide
-		// operation will be calculated first
-		while ((Arrays.toString(stringRange).contains(OPERATOR_DIVIDE)
-				|| Arrays.toString(stringRange).contains(OPERATOR_MULTIPLY)) && !exitLoop) {
+                        if (OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[j]))) {
+                            //                            System.out.println("Multiple operator>>>" + sumInArray[j]);
+                            total = Double.valueOf(stringNo1) * Double.valueOf(stringNo2);
+                        } else if (OPERATOR_DIVIDE.equals(String.valueOf(sumInArray[j]))) {
+                            //                            System.out.println("Divide operator>>>" + sumInArray[j]);
+                            total = Double.valueOf(stringNo1) / Double.valueOf(stringNo2);
+                        }
 
-//			System.out.println("List of string calculate of mutliply/divide >>>" + Arrays.toString(stringRange));
+                        sumInArray[j] = String.valueOf(total);
 
-			for (int j = start; j <= end; j++) {
+                    } else {
+                        exitLoop = true;
 
-				if ((OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[j]))
-						|| OPERATOR_DIVIDE.equals(String.valueOf(sumInArray[j])))
-						&& (String.valueOf(sumInArray[j - 1]).isEmpty()
-								|| String.valueOf(sumInArray[j + 1]).isEmpty())) {
-					exitLoop = true;
-					break;
+                    }
+                    break;
+                } else if (OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[j]))
+                        && !String.valueOf(sumInArray[j - 1]).isEmpty()
+                        && !String.valueOf(sumInArray[j + 1]).isEmpty()) {
 
-				} else if (OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[j]))
-						&& !String.valueOf(sumInArray[j - 1]).isEmpty()
-						&& !String.valueOf(sumInArray[j + 1]).isEmpty()) {
+                    //                    System.out.println("Multiple operator>>>" + sumInArray[j]);
 
-//					System.out.println("Multiple operator>>>" + sumInArray[j]);
+                    total = Double.valueOf(sumInArray[j - 1]) * Double.valueOf(sumInArray[j + 1]);
 
-					total = Double.valueOf(sumInArray[j - 1]) * Double.valueOf(sumInArray[j + 1]);
+                    sumInArray[j - 1] = String.valueOf(total);
+                    sumInArray[j] = EMPTY_STRING;
+                    sumInArray[j + 1] = EMPTY_STRING;
 
-					sumInArray[j - 1] = String.valueOf(total);
-					sumInArray[j] = EMPTY_STRING;
-					sumInArray[j + 1] = EMPTY_STRING;
+                    break;
 
-					break;
+                } else if (OPERATOR_DIVIDE.equals(String.valueOf(sumInArray[j]))
+                        && !String.valueOf(sumInArray[j - 1]).isEmpty()
+                        && !String.valueOf(sumInArray[j + 1]).isEmpty()) {
 
-				} else if (OPERATOR_DIVIDE.equals(String.valueOf(sumInArray[j]))
-						&& !String.valueOf(sumInArray[j - 1]).isEmpty()
-						&& !String.valueOf(sumInArray[j + 1]).isEmpty()) {
+                    //                    System.out.println("Divide operator>>>" + sumInArray[j]);
 
-//					System.out.println("Divide operator>>>" + sumInArray[j]);
+                    total = Double.valueOf(sumInArray[j - 1]) / Double.valueOf(sumInArray[j + 1]);
 
-					total = Double.valueOf(sumInArray[j - 1]) / Double.valueOf(sumInArray[j + 1]);
+                    sumInArray[j - 1] = String.valueOf(total);
+                    sumInArray[j] = EMPTY_STRING;
+                    sumInArray[j + 1] = EMPTY_STRING;
 
-					sumInArray[j - 1] = String.valueOf(total);
-					sumInArray[j] = EMPTY_STRING;
-					sumInArray[j + 1] = EMPTY_STRING;
+                    break;
+                }
 
-					break;
-				}
+            }
 
-			}
+            stringRange = Arrays.copyOfRange(sumInArray, start, end);
 
-			stringRange = Arrays.copyOfRange(sumInArray, start, end);
+        }
 
-		}
+        total = 0d; // reset the total since it used again for calculation
 
-		total = 0d; // reset the total since it used again for calculation
+        //        System.out.println("Movement of string when calculation perform>>>");
 
-//		System.out.println("Movement of string when calculation perform>>>");
+        for (int i = 0; i < sumInArray.length; i++) {
 
-		for (int i = 0; i < sumInArray.length; i++) {
+            // calculate within the range given
+            if (!sumInArray[i].isEmpty() && ((start <= i && i <= end) || (0 == start && 0 == end))) {
 
-//			System.out.println(Arrays.toString(sumInArray));
+                if (!BRACKET_START.equals(String.valueOf(sumInArray[i]))
+                        && !BRACKET_END.equals(String.valueOf(sumInArray[i]))
+                        && !String.valueOf(sumInArray[i]).isEmpty()) {
 
-			// calculate within the range given
-			if (!sumInArray[i].isEmpty() && ((start <= i && i <= end) || (0 == start && 0 == end))) {
+                    if (0d == total) {
+                        total = Double.valueOf(sumInArray[i]);
+                    } else if (OPERATOR_PLUS.equals(String.valueOf(sumInArray[i]))) {
+                        total += Double.valueOf(getStringNo2(end, sumInArray, i));
+                    } else if (OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[i]))) {
+                        total *= Double.valueOf(getStringNo2(end, sumInArray, i));
+                    } else if (OPERATOR_DIVIDE.equals(String.valueOf(sumInArray[i]))) {
+                        total /= Double.valueOf(getStringNo2(end, sumInArray, i));
+                    } else if (OPERATOR_MINUS.equals(String.valueOf(sumInArray[i]))) {
+                        total -= Double.valueOf(getStringNo2(end, sumInArray, i));
+                    }
 
-				if (!BRACKET_START.equals(String.valueOf(sumInArray[i]))
-						&& !BRACKET_END.equals(String.valueOf(sumInArray[i]))
-						&& !String.valueOf(sumInArray[i]).isEmpty()) {
+                    sumInArray[start] = String.valueOf(total);
 
-					if (0d == total) {
-						total = Double.valueOf(sumInArray[i]);
-					} else if (OPERATOR_PLUS.equals(String.valueOf(sumInArray[i]))) {
-						total += Double.valueOf(sumInArray[i + 1]);
-						sumInArray[i + 1] = EMPTY_STRING;
-					} else if (OPERATOR_MULTIPLY.equals(String.valueOf(sumInArray[i]))) {
-						total *= Double.valueOf(sumInArray[i + 1]);
-						sumInArray[i + 1] = EMPTY_STRING;
-					} else if (OPERATOR_DIVIDE.equals(String.valueOf(sumInArray[i]))) {
-						total /= Double.valueOf(sumInArray[i + 1]);
-						sumInArray[i + 1] = EMPTY_STRING;
-					} else if (OPERATOR_MINUS.equals(String.valueOf(sumInArray[i]))) {
-						total -= Double.valueOf(sumInArray[i + 1]);
-						sumInArray[i + 1] = EMPTY_STRING;
-					}
+                }
 
-					sumInArray[start] = String.valueOf(total);
+                sumInArray[i] = EMPTY_STRING; // after perform calculation, replace with empty string
 
-				}
+            }
 
-				sumInArray[i] = EMPTY_STRING; // after perform calculation, replace with empty string
+            //            System.out.println(Arrays.toString(sumInArray));
+        }
+        return total;
+    }
 
-			}
-		}
-		return total;
-	}
+    /**
+     * To get string no 2 from the array by ignoring spaces
+     * @param end
+     * @param sumInArray
+     * @param i
+     * @return
+     */
+    private static String getStringNo2(Integer end, String[] sumInArray, int i) {
+
+        String stringNo2 = null;
+
+        if (String.valueOf(sumInArray[i + 1]).isEmpty()) {
+            for (int k = i + 1; k <= end; k++) {
+
+                if (!String.valueOf(sumInArray[k]).isEmpty() && isNumeric(sumInArray[k])) {
+
+                    stringNo2 = sumInArray[k];
+                    sumInArray[k] = EMPTY_STRING;
+                    break;
+
+                }
+
+            }
+
+        } else {
+            stringNo2 = sumInArray[i + 1];
+            sumInArray[i + 1] = EMPTY_STRING;
+        }
+
+        return stringNo2;
+    }
+
+    /**
+     * To check whether the string is numeric
+     * @param strNum
+     * @return boolean true - is numeric, false - not numeric
+     */
+    public static boolean isNumeric(String strNum) {
+        try {
+            Double.parseDouble(strNum);
+        } catch (NumberFormatException | NullPointerException e) {
+            return false;
+        }
+        return true;
+    }
 
 }
